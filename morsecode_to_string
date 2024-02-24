@@ -1,0 +1,24 @@
+def morseDecode(morse_code):
+    # Morse code dictionary (reversed from the original)
+    morse_to_char = {v: k for k, v in morse_code.items()}
+
+    # Split the Morse code input by spaces to get individual Morse code sequences
+    morse_words = morse_code.split(' ')
+
+    # Decode each Morse code sequence and concatenate the characters
+    decoded_string = ''
+    for morse_word in morse_words:
+        # If the Morse code sequence exists in the dictionary, append its corresponding character
+        if morse_word in morse_to_char:
+            decoded_string += morse_to_char[morse_word]
+        else:
+            # If the Morse code sequence is not found in the dictionary, append a placeholder
+            decoded_string += '?'
+
+    return decoded_string
+
+# Driver Code
+if __name__ == "__main__":
+    morse_input = input("Enter Morse code to decode: ")
+    decoded_string = morseDecode(morse_input)
+    print("Decoded string:", decoded_string)
