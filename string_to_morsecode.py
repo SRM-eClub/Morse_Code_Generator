@@ -15,8 +15,7 @@ def morseEncode(x):
     return morse_code.get(x.lower(), '')
 
 def morseCode(s):
-    for character in s:
-        print(morseEncode(character), end=" ")
+    return " ".join([morseEncode(character) for character in s])
 
 # Driver Code
 if __name__ == "__main__":
